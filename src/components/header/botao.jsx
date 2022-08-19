@@ -3,7 +3,7 @@ import './botao.css'
 
 const Botao = (props) => {
   return ( 
-    <button className='botao' style={props.width}>{props.textoBotao}</button>
+    <button className='botao' onClick={props.onClick}>{props.textoBotao}</button>
    );
 }
  
