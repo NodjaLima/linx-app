@@ -5,43 +5,50 @@ import axios from 'axios';
 import Botao from '../header/botao';
 import Card from './card'
 
+import './section-dois.css'
+
 const SectionDois = () => {
 
   const [req, setReq] = useState([])
+  const [page, setPage] = useState([])
 
-  const url = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
+     
   useEffect(()=>{
+    const url = `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1`
     axios
     .get(url)
     .then((response) => {
-      console.log(response.data.products)
-      setReq(response.data.products)})
-      .catch((e)=>('deu ruim'))
+      setPage(response.data.nextPage)
+      console.log(response.data.nextPage)
+      setReq(response.data.products)
+    })
+    .catch((e)=>(e.message))
   }, [])
 
-  // const novaRequisicao = (parametro) => {
-
-  //   const novaReq = (parametro) => {axios
-  //   .get(`https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${parametro}`)
-  //   .then((res) => (res.data.products))
-  //   .catch((e)=>('deu ruim'))}
-
-  //   console.log(novaReq)
-  //   // const [ newGrid ] = [...req, novaReq]
-  //   // console.log(newGrid)
-  //   // setReq(newGrid)
-  // }
+  
+  function adicionaProdutos(url) {
+    axios.get(`http://${url}`)
+    .then((response) => {
+      setPage(response.data.nextPage)
+      setReq(
+        [...req, ...response.data.products]
+        )
+    })
+    .catch((e)=>('deu ruim'))
+  } 
 
 
   return ( 
     <div className='section-dois'>
       <div className='grid-cards'>
         { req.map((produto)=>{
-          return <Card src={produto.image} id={produto.id} nome={produto.name} descricao={produto.description} oldPrice={produto.oldPrice} promo={produto.price} />
+          return <Card src={produto.image} id={produto.id} nome={produto.name} descricao={produto.description} oldPrice={`De R$ ${produto.oldPrice}`} promo={`Por: R$ ${produto.price}`} parcelas={`ou ${produto.installments.count}x de ${produto.installments.value}`} />
         })}
 
       </div>
-      <Botao  textoBotao='Ainda mais produtos aqui!'/>
+      <div className='div-botao'>
+      <Botao onClick={()=> {adicionaProdutos(page)}} textoBotao='Ainda mais produtos aqui!'/>
+      </div>
     </div>
    );
 }

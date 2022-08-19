@@ -1,0 +1,23 @@
+.card-unitario {
+ color: #888888
+}
+
+.imagem-card {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  width: 100%;
+}
+
+.nome-card {
+  font-size: 14px;
+}
+
+.descricao-card, .oldPrice-card {
+  font-size: 12px;
+}
+
+.promo-card {
+  font-size: 16px;
+  font-weight: bold;
+}
