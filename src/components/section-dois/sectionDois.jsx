@@ -19,7 +19,6 @@ const SectionDois = () => {
     .get(url)
     .then((response) => {
       setPage(response.data.nextPage)
-      console.log(response.data.nextPage)
       setReq(response.data.products)
     })
     .catch((e)=>(e.message))
@@ -44,7 +43,6 @@ const SectionDois = () => {
         { req.map((produto)=>{
           return <Card src={produto.image} id={produto.id} nome={produto.name} descricao={produto.description} oldPrice={`De R$ ${produto.oldPrice}`} promo={`Por: R$ ${produto.price}`} parcelas={`ou ${produto.installments.count}x de ${produto.installments.value}`} />
         })}
-
       </div>
       <div className='div-botao'>
       <Botao onClick={()=> {adicionaProdutos(page)}} textoBotao='Ainda mais produtos aqui!'/>
