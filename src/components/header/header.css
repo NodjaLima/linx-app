@@ -1,0 +1,35 @@
+.header-container {
+  background: #707070 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  width: 1500px;
+  height: 399px;
+}
+
+.texto-um {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.texto-dois {
+  margin-top: 0;
+  font-size: 40px;
+}
+
+.texto-tres {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.header-botoes {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 130px;
+}

@@ -1,0 +1,16 @@
+.informacoes-container{
+  width: 520px;
+  height: 220px;
+  text-align: left;
+  color: #888888;
+  opacity: 1;
+  margin: auto;
+}
+
+.informacoes-titulo {
+  font-size: 20px;
+}
+
+.informacoes-texto {
+  font-size: 12px;
+}
