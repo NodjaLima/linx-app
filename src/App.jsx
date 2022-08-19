@@ -4,6 +4,7 @@ import Header from './components/header/header'
 import SectionUm from './components/section-um/sectionUm'
 import SectionDois from './components/section-dois/sectionDois'
 import SectionTres from './components/section-tres/sectionTres'
+import Footer from './components/footer/footer'
 
 import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
       <SectionUm />
       <SectionDois />
       <SectionTres />
+      <Footer />
     </div>
   )
 }
