@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Botao from '../header/botao';
 import Card from './card'
+import Divisor from '../divisor/divisor';
 
 import './section-dois.css'
 
@@ -39,6 +40,7 @@ const SectionDois = () => {
 
   return ( 
     <div className='section-dois'>
+      <Divisor texto='Sua seleção especial' width='38%'/>
       <div className='grid-cards'>
         { req.map((produto)=>{
           return <Card src={produto.image} id={produto.id} nome={produto.name} descricao={produto.description} oldPrice={`De R$ ${produto.oldPrice}`} promo={`Por: R$ ${produto.price}`} parcelas={`ou ${produto.installments.count}x de ${produto.installments.value}`} />
@@ -47,6 +49,7 @@ const SectionDois = () => {
       <div className='div-botao'>
       <Botao onClick={()=> {adicionaProdutos(page)}} textoBotao='Ainda mais produtos aqui!'/>
       </div>
+
     </div>
    );
 }
