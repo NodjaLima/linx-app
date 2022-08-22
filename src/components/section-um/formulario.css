@@ -5,6 +5,23 @@
   margin-top: 20px;
 }
 
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.inputTxt {
+  height: 30px;
+  width: 100%;
+}
+
+label {
+  color: #888888;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .radios {
   display: flex;
   width: 200px;
@@ -26,5 +43,11 @@
     width: 100%;
     padding: 15px;
   
+  }
+
+  .inputForm {
+    width: 100%;
+    padding: 15px;
+    gap: 20px
   }
 }

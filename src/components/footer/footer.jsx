@@ -6,11 +6,18 @@ import './footer.css'
 
 const Footer = () => {
   return ( 
-    <footer className='footer-container'>
+    <div className='footer-container'>
+      <div className="bg-color">
+        <div className="bg-cut"></div>
+      </div>
+      <br /><br />
+      <div className='texto'>
       <Texto texto='Testando suas habilidades em HTML, CSS e JS.'/>
       <Texto texto='Linx Impulse'/>
       <Texto texto='2019'/>
-    </footer>
+      </div>
+      <div className='bg-down' />
+    </div>
    );
 }
  

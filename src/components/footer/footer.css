@@ -1,11 +1,38 @@
 .footer-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: #707070;
-  font-size: 12px;
-  text-align: center;
+  align-items: center;
   color: #FFFFFF;
-  padding-bottom: 80px;
-  padding-top: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.bg-cut {
+  position: absolute;
+  
+  background-color: #707070;
+  width: 100%;
+  height: 100px;
+}
+
+.texto {
+  text-align: center;
+  background-color: #707070;
+  padding-bottom: 170px;
+  width: 100%;
+}
+
+.bg-color {
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+  position: absolute;
+  transform: skewY(-3deg);
+}
+
+bg-down {
+  background-color: #707070;
+  justify-content: flex-end;
+  height: 150px;
 }

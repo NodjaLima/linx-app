@@ -1,14 +1,16 @@
 .section-um-container {
-  display: flex;
-  flex: 2;
+  display: grid;
+  grid-template-columns: auto auto;  
   justify-content: center;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 
 
 @media (max-width: 900px) {
   .section-um-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 15px;
