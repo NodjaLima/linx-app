@@ -40,7 +40,7 @@ const SectionDois = () => {
 
   return ( 
     <div className='section-dois'>
-      <Divisor texto='Sua seleção especial' width='38%'/>
+      <Divisor texto='Sua seleção especial' width='30%'/>
       <div className='grid-cards'>
         { req.map((produto)=>{
           return <Card src={produto.image} id={produto.id} nome={produto.name} descricao={produto.description} oldPrice={`De R$ ${produto.oldPrice}`} promo={`Por: R$ ${produto.price}`} parcelas={`ou ${produto.installments.count}x de ${produto.installments.value}`} />

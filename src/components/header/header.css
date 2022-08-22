@@ -53,3 +53,14 @@
   width: 931px;
 }
 
+@media (max-width: 900px) {
+  .header-botoes {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    margin-bottom: 130px;
+    width: auto;
+  
+  }
+}
+

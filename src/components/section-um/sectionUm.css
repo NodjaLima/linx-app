@@ -6,3 +6,12 @@
   gap: 20px;
 }
 
+
+@media (max-width: 900px) {
+  .section-um-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  
+  }
+}

@@ -24,3 +24,14 @@
   margin-top: 30px;
   width: 260px;
 }
+
+@media (max-width: 900px) {
+  .inputs-section-tres {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .botao-section-tres {
+    width: 60%;
+  }
+}

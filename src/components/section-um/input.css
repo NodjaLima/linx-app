@@ -9,3 +9,10 @@
   height: 30px;
   width: 100%;
 }
+
+@media (max-width: 900px) {
+  .input-geral {
+    width: 100%;
+  }
+}
+

@@ -4,6 +4,7 @@
   gap: 30px;
   align-items: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .grid-cards{
@@ -18,4 +19,12 @@
 
 .div-botao {
   width: 260px;
+}
+
+@media (max-width: 900px) {
+  .grid-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
