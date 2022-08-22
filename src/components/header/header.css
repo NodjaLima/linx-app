@@ -1,21 +1,38 @@
 .header-container {
-  background: #707070 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  opacity: 1;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  color: #ffffff;
-  justify-content: center;
-  top: 0px;
-  left: 0px;
-  width: 1500px;
-  height: 399px;
+  align-items: center;
+  color: #FFFFFF;
+  height: 25rem;
+  width: 100%;
+}
+
+.backGroundColor {
+  z-index: -1;
+  position: absolute;
+  background-color: #707070;
+  width: 100%;
+  height: 60%;
+}
+
+.backGroundColorCut {
+  margin-top: 22rem;
+  background-color: white;
+  width: 100%;
+  height: 60%;
+  z-index: -1;
+  position: absolute;
+  transform: skewY(5deg);
+  -webkit-transform: skewY(3deg);
+  -moz-transform: skewY(6deg);
+  -ms-transform: skewY(6deg);
+  -o-transform: skewY(6deg);
 }
 
 .texto-um {
   margin-top: 0;
   font-size: 20px;
+  margin-top: 69px;
 }
 
 .texto-dois {
@@ -30,6 +47,9 @@
 
 .header-botoes {
   display: flex;
+  flex: 4;
   gap: 20px;
   margin-bottom: 130px;
+  width: 931px;
 }
+

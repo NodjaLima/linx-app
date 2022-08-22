@@ -8,6 +8,10 @@ import './header.css'
 const Header = () => {
   return ( 
     <div className='header-container'>
+      <div className='backGroundColor'>
+        <div className='backGroundColorCut'></div>
+      </div>
+      <div className='backGroundColor'><div className='backGroundColorCut'></div></div>
       <Texto classe="texto-um" texto='uma seleção de produtos' />
       <Texto classe="texto-dois" texto='especial para você' />
       <Texto classe="texto-tres" texto='todos os produtos dessa lista foram selecionados a partir da sua navegação. Aproveite!' />
