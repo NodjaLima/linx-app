@@ -43,7 +43,7 @@ const Forms = () => {
 
   return ( 
 
-    <div >
+    <div className='form-container'>
       <form className='formulario-um' onSubmit={(e) => {handleSubmit(e)}}>
 
         <label>Seu nome:</label>
@@ -58,7 +58,7 @@ const Forms = () => {
         {vazio && form['inputCPF'] == '' ? <div><p>O campo CPF precisa ser preenchido</p><br /></div> : ''}
         { !cpfValido && form['inputCPF'] !== '' ? <div><p>O campo CPF precisa ser preenchido corretamente</p><br /></div> : ''}
 
-        <div> 
+        <div className='radios'> 
 
           <input type='radio' id='masc'/><label htmlFor='masc'>Masculino</label>
           <input type="radio" id='feme'/><label htmlFor='feme'>Feminino</label>
