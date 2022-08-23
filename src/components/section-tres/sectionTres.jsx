@@ -10,7 +10,9 @@ import './SectionTres.css'
 const SectionTres = () => {
   return ( 
     <div className='section-tres'>
-      <Divisor texto='Compartilhe a novidade' width="30%"/>
+      <div className='divisor'>
+        <Divisor texto='Compartilhe a novidade' width="30%"/>
+      </div>
       <Texto classe='texto-section-tres' texto='Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!'/>
       <div className='inputs-section-tres'>
         <InputText labelFor='nome-do-amigo' labelTxt='Nome do seu amigo:' inputType="text"/>

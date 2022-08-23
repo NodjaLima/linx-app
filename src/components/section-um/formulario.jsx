@@ -1,67 +1,77 @@
 import React from 'react';
+import { useState } from 'react';
 
 import Botao from '../header/botao';
 
 import './formulario.css'
 
-const Validacao = ({valoresIniciais}) => {
-  console.log(valoresIniciais)
-
-  function handleChange () {
-    console.log( 'alguem digitou aqui nesse form')
-  }
-  return {
-    values: valoresIniciais,
-    handleChange
-  }
-}
-
 const Forms = () => {
-  const valida = Validacao({
-    valoresIniciais: {
-      inputNome: 'seu nome aqui',
-      inputEmail:  'seu_email@email.com',
-      inputCPF: '00000000000'
+
+  const [form, setForm] = useState({
+    inputNome: '',
+    inputEmail: '',
+    inputCPF: ''
+  })
+  const [vazio, setVazio] = useState(false)
+  const [emailValido, setEmailValido] = useState(false)
+  const [cpfValido, setCpfValido] = useState(false)
+
+
+  const handleChange = (e) => {
+    let newProp = form;
+    setEmailValido(true)
+    newProp[e.target.name] = e.target.value
+    setForm({ ...newProp })
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    let vazios = Object.values(form).some(obj => obj == '')
+    setVazio(vazios)
+
+    let validaEmail = form['inputEmail'].toLowerCase().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
+    setEmailValido(validaEmail)
+
+    let validaCpf = form['inputCPF'].length == 11
+    setCpfValido(validaCpf)
+
+    if( !vazios && validaEmail && validaCpf) {
+      e.currentTarget.submit()
     }
-  }) 
+  }
 
   return ( 
-    <form className='formulario-um'>
 
-      <div className='inputForm'>
+    <div >
+      <form className='formulario-um' onSubmit={(e) => {handleSubmit(e)}}>
 
-      <label htmlFor="inputNome">Seu nome:</label>
-      <input className='inputTxt' type="text" id='inputNome' value={valida.values.inputNome} onChange={()=> {Validacao.handleChange}}/>
-      <label htmlFor="inputEmail">E-mail:</label>
-      <input className='inputTxt' type="text" id='inputEmail' value={valida.values.inputEmail} onChange={()=> {Validacao.handleChange}}/>
-      <label htmlFor="inputCPF">CPF</label>
-      <input className='inputTxt' type="number" id='inputCPF' value={valida.values.inputCPF} onChange={()=> {Validacao.handleChange}}/>
-     
-      <div>
+        <label>Seu nome:</label>
+        <input className='inputTxt' type="text" name='inputNome' onBlur={(e) => handleChange(e)}/><br />
+        {vazio && form['inputNome'] == '' ? <div><p>O campo Nome precisa ser preenchido</p><br /></div> : ''}
+        <label>E-mail:</label>
+        <input className='inputTxt' type="text" name='inputEmail' onBlur={(e) => handleChange(e)}/><br />
+        {vazio && form['inputEmail'] == '' ? <div><p>O campo E-mail precisa ser preenchido</p><br /></div> : ''}
+        { !emailValido && form['inputEmail'] !== '' ? <div><p>O campo E-mail precisa ser preenchido com um email válido</p><br /></div> : ''}
+        <label>CPF</label>
+        <input className='inputTxt' type="number" name='inputCPF' onBlur={(e) => handleChange(e)}/><br />
+        {vazio && form['inputCPF'] == '' ? <div><p>O campo CPF precisa ser preenchido</p><br /></div> : ''}
+        { !cpfValido && form['inputCPF'] !== '' ? <div><p>O campo CPF precisa ser preenchido corretamente</p><br /></div> : ''}
 
-        <input type='radio' id='masc'/><label htmlFor='masc'>Masculino</label>
-        <input type="radio" id='feme'/><label htmlFor='feme'>Feminino</label>
-      
-      </div>
-      
-      </div>
-      
-      <Botao className='botaoForms' textoBotao="Enviar" type='submit'/>
-    </form>
+        <div> 
 
+          <input type='radio' id='masc'/><label htmlFor='masc'>Masculino</label>
+          <input type="radio" id='feme'/><label htmlFor='feme'>Feminino</label>
+  
+        </div>
+        <br />
+        <Botao className='botaoForms' textoBotao="Enviar" type='submit'/>
 
+      </form>
 
-    // <form className='formulario-um'>
-    //   <InputText labelFor='inputNome' labelTxt='Seu nome' inputType="text" value={Formik.values.inputNome} />
-    //   <InputText labelFor='inputEmail' labelTxt='E-mail' inputType="text" value={Formik.values.inputEmail}/>
-    //   <InputText labelFor='inputCPF' labelTxt='CPF' inputType="number" />
-    //   <div className='radios' value={Formik.values.inputCPF}>
-    //     <InputRadio  labelFor='inputMasc' labelTxt='Masculino' inputType="radio" /> 
-    //     <InputRadio  labelFor='inputFem' labelTxt='Feminino' inputType="radio" /> 
-    //   </div>
-    //   <Botao className='botaoForms' textoBotao="Enviar" type='submit'/>
+    </div>
 
-    //</form>
+    
    );
 }
  

@@ -17,6 +17,10 @@
   
 }
 
+.dividor {
+  width: 75%;
+}
+
 .div-botao {
   width: 260px;
 }
@@ -25,6 +29,9 @@
   .grid-cards {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+  .dividor {
     width: 100%;
   }
 }
