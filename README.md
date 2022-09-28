@@ -14,5 +14,8 @@ Repositório criado de acordo com o solicitado na primeira sprint do modulo 5, d
  -   CSS
  -   Axios
 
+## Para acessar e ver o resultado:
+
+https://linx-app.vercel.app/
  
 
