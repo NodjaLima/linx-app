@@ -4,14 +4,16 @@
   color: #888888;
   opacity: 1;
   margin: auto;
+  width: 90%;
 }
 
 .informacoes-titulo {
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .informacoes-texto {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media (max-width: 900px) {
